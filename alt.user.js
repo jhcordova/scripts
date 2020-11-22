@@ -2,8 +2,8 @@
 // ==UserScript==
 // @name         alt
 // @version      1.1
-// @downloadURL  
-// @updateURL    
+// @downloadURL  https://github.com/jhcordova/scripts/raw/main/alt.user.js
+// @updateURL    https://github.com/jhcordova/scripts/raw/main/alt.user.js
 // @description  Shows the alt text of all the images on the page
 // @author       Julio Cordova
 // @match        *://*/*

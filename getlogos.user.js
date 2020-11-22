@@ -6,8 +6,8 @@
 // @match          *
 // @description    Creates a section with all the logos on logo bars, making it easy to read them, works with TCS and Net Driven
 // @author         Julio Cordova
-// @updateURL      
-// @downloadURL    
+// @updateURL      https://github.com/jhcordova/scripts/raw/main/getlogos.user.js
+// @downloadURL    https://github.com/jhcordova/scripts/raw/main/getlogos.user.js
 // ==/UserScript==
 
 

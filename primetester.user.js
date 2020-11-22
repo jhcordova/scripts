@@ -2,8 +2,8 @@
 // @name         PrimeTester
 // @version      2.6.3
 // @author       Julio Cordova
-// @updateURL    
-// @downloadURL  
+// @updateURL    https://github.com/jhcordova/scripts/raw/main/primetester.user.js
+// @downloadURL  https://github.com/jhcordova/scripts/raw/main/primetester.user.js
 // @description  Check for brands, services and tokens on the Prime link
 // @grant        none
 // @run-at       document-end
