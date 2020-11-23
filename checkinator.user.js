@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Checkinator 5000000
-// @version      3.5
+// @version      3.8
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *://*.netdrivenwebs.com/*
 // @include      *://*/tires
+// @downloadURL  https://github.com/jhcordova/scripts/raw/main/checkinator.user.js
+// @updateURL    https://github.com/jhcordova/scripts/raw/main/checkinator.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
