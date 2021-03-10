@@ -1,7 +1,7 @@
 
 // ==UserScript==
 // @name         alt
-// @version      1.1
+// @version      1.2
 // @downloadURL  https://github.com/jhcordova/scripts/raw/main/alt.user.js
 // @updateURL    https://github.com/jhcordova/scripts/raw/main/alt.user.js
 // @description  Shows the alt text of all the images on the page
@@ -19,6 +19,8 @@ var styles = `
   .border-white{
     -webkit-text-stroke: 0.2px white;
     color:black;
+    z-index: 9999;
+    position: relative;
   }
   ::-moz-selection { background: red; color: #fff; text-shadow: none; }
   ::selection { background: red; color: #fff; text-shadow: none; }
