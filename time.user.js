@@ -37,7 +37,7 @@ if (typeof (element) != 'undefined' && element != null) {
 		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 		var timeClaimed = document.getElementById("input").value;
 		var timeEnd = new Date("Mon Jan 01 2020 " + time + ":00 GMT-0700").getTime();  // la paz time
-		var timeStart = new Date("Mon Jan 01 2020 " + timeClaimed + ":00 GMT-0400").getTime();  // duluth time
+		var timeStart = new Date("Mon Jan 01 2020 " + timeClaimed + ":00 GMT-0500").getTime();  // duluth time
 		var hourDiff;
 		//if to check if time is after 1 pm, add 12h to current time to take into accout the 24h format on javascript Date variable
 		if (document.getElementById("time12").checked) {
