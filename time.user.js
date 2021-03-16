@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Time
 // @namespace    http://tampermonkey.net/
-// @version      2.3.2
+// @version      2.3.3
 // @updateURL    https://github.com/jhcordova/scripts/raw/main/time.user.js
 // @downloadURL  https://github.com/jhcordova/scripts/raw/main/time.user.js
 // @description  try to take over the world! hueheuheuheuehuh
