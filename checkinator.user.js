@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Checkinator 5000000
-// @version      3.8
+// @version      3.8.1
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *://*.netdrivenwebs.com/*
@@ -26,7 +26,7 @@ function checkURL() {
     } else if (url.pathname == "/Tires" && url.hostname.includes("web1")) {
         check[3] = true; //isCommercial = true;
 
-    } else if (url.pathname.includes("Services/view/ma") && url.hostname.includes("web1")) {
+    } else if (url.pathname.includes("Services/program") && url.hostname.includes("web1")) {
         check[4] = true; // isServicesWeb1 = true;
     }
     return check;
@@ -249,7 +249,7 @@ function dataFromDSCheckServices(inputTXT, container, tag, tagText, start) {
 
     for (let i = 0; i < services.length; i++) {
         found = false;
-        for (let j = start; j < rowServices.length; j++) {   
+        for (let j = start; j < rowServices.length; j++) {
             var valid = rowServices[j].getElementsByTagName(tagText)[0];
             if (typeof valid != 'undefined') {
                 if (services[i] == valid.innerText.replace(/,/g, "").replace(/& /g, "").replace(/  /g, " ")) {
@@ -257,7 +257,7 @@ function dataFromDSCheckServices(inputTXT, container, tag, tagText, start) {
                         document.getElementById(container).getElementsByTagName(tag)[j].getElementsByTagName("input")[0].checked = true;
                     }
                     else {
-                       /* document.getElementById(container).getElementsByTagName(tag)[j].getElementsByTagName(tagText)[0].getElementsByTagName("input")[2].checked = true;*/
+                        /* document.getElementById(container).getElementsByTagName(tag)[j].getElementsByTagName(tagText)[0].getElementsByTagName("input")[2].checked = true;*/
 
                         document.getElementById(container).getElementsByTagName(tag)[1].getElementsByTagName("input")[2].checked = true;
 
