@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Checkinator 5000000
-// @version      3.8.1
+// @version      3.8.2
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *://*.netdrivenwebs.com/*
@@ -259,7 +259,7 @@ function dataFromDSCheckServices(inputTXT, container, tag, tagText, start) {
                     else {
                         /* document.getElementById(container).getElementsByTagName(tag)[j].getElementsByTagName(tagText)[0].getElementsByTagName("input")[2].checked = true;*/
 
-                        document.getElementById(container).getElementsByTagName(tag)[1].getElementsByTagName("input")[2].checked = true;
+                        document.getElementById(container).getElementsByTagName(tag)[j].getElementsByTagName("input")[2].checked = true;
 
                     }
                     rowServices[j].style.backgroundColor = "#008000";
