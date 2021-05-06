@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Checkinator 5000000
-// @version      3.9.0
+// @version      3.9.1
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *://*.netdrivenwebs.com/*
@@ -227,6 +227,7 @@ function cleanStringFromInput(inputTXT) {
     var text = document.getElementById(inputTXT).value;
     array_raw = text
         .replace(/,/g, ".")
+        .replace(/-/g, ".")
         .replace(/\n/g, ".")
         .replace(/[^\w\.]/g, " ")
         .split(".");
