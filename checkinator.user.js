@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Checkinator 5000000
-// @version      3.9.2
+// @version      3.9.3
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *://*.netdrivenwebs.com/*
@@ -234,11 +234,12 @@ function cleanStringFromInput(inputTXT) {
     array_raw = array_raw.filter(Boolean);
     var brands = [];
     for (let i = 0; i < array_raw.length; i++) {
-        if (!array_raw[i].includes("Brands")) {
+        if (!array_raw[i].includes("Brands") && array_raw[i].trim().length > 2) {
             brands[i] = array_raw[i].trim();
         }
 
     }
+
     brands = brands.filter(Boolean);
     array_raw = brands;
     for (let i = 0; i < array_raw.length; i++) {
