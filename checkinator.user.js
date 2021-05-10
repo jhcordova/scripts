@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Checkinator 5000000
-// @version      3.9.1
+// @version      3.9.2
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *://*.netdrivenwebs.com/*
@@ -374,17 +374,19 @@ function dataFromDSCheckBrands(container, element, index, inputTXT) {
     for (let i = 0; i < brandsFromInput.length; i++) {
         found = false;
         for (let j = 0; j < brands.length; j++) {
-            brandOnSite = brands[j].getElementsByTagName(element)[index].innerText.trim();
-            if (brands[j].getElementsByTagName(element).length > 0) {
-                if (includesString(orange, brandsFromInput[i], brandOnSite)
-                    || (similitude(brandsFromInput[i], brandOnSite) > 55)) {
-                    brands[j].style.backgroundColor = "orange";
-                }
-                if (brandsFromInput[i] == brandOnSite ||
-                    includesString(green, brandsFromInput[i], brandOnSite)) {
-                    brands[j].getElementsByTagName('input')[0].checked = true;
-                    brands[j].style.backgroundColor = "green";
-                    found = true;
+            if (brands[j].getElementsByTagName(element)[index] != undefined) {
+                brandOnSite = brands[j].getElementsByTagName(element)[index].innerText.trim();
+                if (brands[j].getElementsByTagName(element).length > 0) {
+                    if (includesString(orange, brandsFromInput[i], brandOnSite)
+                        || (similitude(brandsFromInput[i], brandOnSite) > 55)) {
+                        brands[j].style.backgroundColor = "orange";
+                    }
+                    if (brandsFromInput[i] == brandOnSite ||
+                        includesString(green, brandsFromInput[i], brandOnSite)) {
+                        brands[j].getElementsByTagName('input')[0].checked = true;
+                        brands[j].style.backgroundColor = "green";
+                        found = true;
+                    }
                 }
             }
         }
