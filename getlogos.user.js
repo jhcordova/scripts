@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name           Get Logos
-// @version        2.6
+// @version        2.6.1
 // @grant          none
 // @run-at         document-end
 // @match          *
 // @description    try to take over the world! huehuehueheuheu
 // @author         Julio Cordova
-// @updateURL      https://raw.githubusercontent.com/hiddenssid/dev/master/js/TCSLogos.js   
-// @downloadURL    https://raw.githubusercontent.com/hiddenssid/dev/master/js/TCSLogos.js
+// @updateURL      https://github.com/jhcordova/scripts/raw/main/inventory.user.js  
+// @downloadURL    https://github.com/jhcordova/scripts/raw/main/inventory.user.js
 // ==/UserScript==
 
 
