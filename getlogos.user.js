@@ -6,8 +6,8 @@
 // @match          *
 // @description    try to take over the world! huehuehueheuheu
 // @author         Julio Cordova
-// @updateURL      https://github.com/jhcordova/scripts/raw/main/inventory.user.js  
-// @downloadURL    https://github.com/jhcordova/scripts/raw/main/inventory.user.js
+// @updateURL      https://github.com/jhcordova/scripts/raw/main/getlogos.user.js 
+// @downloadURL    https://github.com/jhcordova/scripts/raw/main/getlogos.user.js
 // ==/UserScript==
 
 
