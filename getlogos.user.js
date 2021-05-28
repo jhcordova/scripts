@@ -1,14 +1,15 @@
 // ==UserScript==
 // @name           Get Logos
-// @version        2.5.1
+// @version        2.6
 // @grant          none
 // @run-at         document-end
 // @match          *
-// @description    Creates a section with all the logos on logo bars, making it easy to read them, works with TCS and Net Driven
+// @description    try to take over the world! huehuehueheuheu
 // @author         Julio Cordova
-// @updateURL      https://github.com/jhcordova/scripts/raw/main/getlogos.user.js
-// @downloadURL    https://github.com/jhcordova/scripts/raw/main/getlogos.user.js
+// @updateURL      https://raw.githubusercontent.com/hiddenssid/dev/master/js/TCSLogos.js   
+// @downloadURL    https://raw.githubusercontent.com/hiddenssid/dev/master/js/TCSLogos.js
 // ==/UserScript==
+
 
 
 function createList() {
@@ -26,6 +27,7 @@ function createList() {
 
 function removeDupObj(list, logoContainer, site) {
     var noDupeObj = {}
+    var n;
     for (i = 0, n = list.length; i < n; i++) {
         var item = list[i];
         if (site) {
@@ -37,7 +39,7 @@ function removeDupObj(list, logoContainer, site) {
 
     var i = 0;
     var nonDuplicatedArray = [];
-    for (var item in noDupeObj) {
+    for (let item in noDupeObj) {
         nonDuplicatedArray[i++] = noDupeObj[item];
     }
 
@@ -55,6 +57,10 @@ function removeDupObj(list, logoContainer, site) {
         logoContainer.appendChild(nonDuplicatedArray[i]);
         logoContainer.appendChild(div);
     }
+    var ATD = document.createElement("div");
+    ATD.setAttribute("id", "ATDBRANDS");
+    logoContainer.appendChild(ATD);
+    incwidth();
 }
 
 function incwidth() {
@@ -100,3 +106,28 @@ if (isTCS) {
 }
 
 
+
+
+
+
+var logonames = document.getElementById("logoList").getElementsByTagName("a");
+var ATD = "Pirelli, BFGoodrich, General, Cooper, Uniroyal, Yokohama, Toyo, Mastercraft, Falken, Nitto, Hankook, Kumho, Nexen, Hercules, Mickey Thompson, Dick Cepek, Ironman";
+var array = ATD.split(",");
+var found = false;
+var notfound = [];
+for (let i = 0; i < array.length; i++) {
+    found = false;
+    for (let j = 0; j < logonames.length; j++) {
+        if (array[i].trim() == logonames[j].title.replace(" Tires", "").replace(" Tire", "").replace("®", "")) {
+            found = true;
+        }
+    }
+    if (!found) {
+        notfound.push(array[i]);
+    }
+}
+
+document.getElementById("ATDBRANDS").innerText = "Missing ATD Brands: " + notfound.toString();
+document.getElementById("ATDBRANDS").style.width = "100px";
+document.getElementById("ATDBRANDS").style.padding = "10px";
+document.getElementById("ATDBRANDS").style.textAlign = "center";
