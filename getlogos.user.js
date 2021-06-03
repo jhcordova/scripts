@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Get Logos
-// @version        2.6.1
+// @version        2.6.2
 // @grant          none
 // @run-at         document-end
 // @match          *
@@ -118,7 +118,7 @@ var notfound = [];
 for (let i = 0; i < array.length; i++) {
     found = false;
     for (let j = 0; j < logonames.length; j++) {
-        if (array[i].trim() == logonames[j].title.replace(" Tires", "").replace(" Tire", "").replace("®", "")) {
+        if (array[i].trim() == logonames[j].title.replace(" Tires", "").replace(" Tire", "").replace("®", "").replace("Shop ", "")) {
             found = true;
         }
     }
