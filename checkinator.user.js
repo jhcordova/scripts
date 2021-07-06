@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Checkinator 5000000
-// @version      3.9.3
+// @version      3.9.5
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *://*.netdrivenwebs.com/*
@@ -230,6 +230,10 @@ function cleanStringFromInput(inputTXT) {
         .replace(/-/g, ".")
         .replace(/\n/g, ".")
         .replace(/[^\w\.]/g, " ")
+        .replace(/ Tires/g, '')
+        .replace(/ Tire/g, '')
+        .replace(/ tires/g, '')
+        .replace(/ tire/g, '')
         .split(".");
     array_raw = array_raw.filter(Boolean);
     var brands = [];
@@ -365,8 +369,8 @@ function dataFromDSCheckBrands(container, element, index, inputTXT) {
     var brandsFromInput = cleanStringFromInput(inputTXT);
     var brandOnSite;
 
-    var orange = [' Tire', ' Tires', ' Tires'];
-    var green = ['®']
+    var orange = [];
+    var green = ['®', ' Tire', ' Tires'];
 
     if (document.getElementById("agData2").checked) {
         green.push(' Ag');
@@ -418,8 +422,8 @@ function dataFromJsonBrands(container, element, index) {
     var brandOnSite;
 
 
-    var orange = [' Tire', ' Tires'];
-    var green = ['®']
+    var orange = [];
+    var green = ['®', ' Tire', ' Tires'];
 
     if (document.getElementById("agData").checked) {
         green.push(' Ag');
