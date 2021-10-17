@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Checkinator 5000000
-// @version      3.9.5
+// @version      3.9.6
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *://*.netdrivenwebs.com/*
@@ -43,7 +43,7 @@ container.innerHTML = '<div class=\"tab\">\r\n <div class=\"tablinks buttons\" o
 
 document.body.prepend(container);
 var dsContainer = document.getElementById("DS");
-dsContainer.innerHTML = '<div class=\"fromDS\">\r\n <div class=\"row\">\r\n <div class=\"col\"> <label>Brands here:<\/label> <textarea id=\"inputFromDS\"><\/textarea> <\/div>\r\n <\/div>\r\n <div class=\"row\">\r\n <div class=\"col\">\r\n <div id=\"button3\" class=\"buttons\"> Check Brands <\/div>\r\n <\/div>\r\n <div class=\"group\">\r\n <div class=\"col\"> <label>Does the site need AG tire data?<\/label> <\/div>\r\n <div class=\"col\"> <input type=\"checkbox\" id=\"agData2\"> <\/div>\r\n <\/div>\r\n\r\n <\/div>\r\n <div class=\"row\">\r\n <div class=\"col\"> <label>Services here:<\/label> <textarea id=\"servicesInputFromDS\"><\/textarea> <\/div>\r\n <\/div>\r\n <div class=\"row\">\r\n <div class=\"col\">\r\n <div id=\"button4\" class=\"buttons\"> Check Services <\/div>\r\n <\/div>\r\n <\/div>\r\n<\/div>';
+dsContainer.innerHTML = '<div class=\"fromDS\">\r\n    <div class=\"row\">\r\n\r\n        <div class=\"col\"> <label>Brands here:<\/label>\r\n            \r\n            <textarea id=\"inputFromDS\"><\/textarea>\r\n        <\/div>\r\n    <\/div>\r\n    <div class=\"row\">\r\n        <div class=\"col\">\r\n            <div id=\"button3\" class=\"buttons\"> Check Brands <\/div>\r\n        <\/div>\r\n        <div class=\"group\">\r\n            <div class=\"col\"> <label>Tire Catalogs \u2013 In This Order:<\/label> <\/div>\r\n            <div class=\"col\"> <input type=\"checkbox\" id=\"sortInThisOrder\"> <\/div>\r\n        <\/div>\r\n        <div class=\"group\">\r\n            <div class=\"col\"> <label>Does the site need AG tire data?<\/label> <\/div>\r\n            <div class=\"col\"> <input type=\"checkbox\" id=\"agData2\"> <\/div>\r\n        <\/div>\r\n\r\n    <\/div>\r\n    <div class=\"row\">\r\n        <div class=\"col\"> <label>Services here:<\/label> <textarea id=\"servicesInputFromDS\"><\/textarea> <\/div>\r\n    <\/div>\r\n    <div class=\"row\">\r\n        <div class=\"col\">\r\n            <div id=\"button4\" class=\"buttons\"> Check Services <\/div>\r\n        <\/div>\r\n    <\/div>\r\n<\/div>';
 
 
 var styles = `#process{margin:20px;padding:10px;position:fixed;top:0;right:0;z-index:9998 !important;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;background-color:#f5f5f5;border-style:solid;border-radius:12px;border-color:#008cba;overflow-y:scroll;max-height:900px;opacity:20%;width:200px}#process:hover{opacity:100%;width:500px}#process #inputFromDS{width:400px;height:200px}#process #servicesInputFromDS{width:400px;height:200px}#process .buttons{padding:15px 25px;font-size:24px;cursor:pointer;text-align:center;text-decoration:none;outline:0;color:#fff;background-color:#008cba;border:none;border-radius:15px}#process .buttons:hover{background-color:#023a4d}#process .buttons:active{background-color:#002836;-webkit-transform:translateY(1px);transform:translateY(1px)}.group{border-style:solid;border:2px solid #008CBA;border-radius:16px;margin:5px;width:200px;padding:10px}#process #inputBrands{width:300px;height:200px}#process label{text-align:center}.tablinksI:hover{color:blue;cursor:pointer}#process #numberOfBrands{width:50px;resize:none !important;text-align:center;height:40px;line-height:40px;padding:0 5px;overflow:hidden}#process textarea{resize:vertical}#process .fromDS .row,#process .internalC .row{margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}#process .fromDS .col,#process .internalC .col{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100%;padding:10px}#process .tablinks{width:100%}#process .tab{overflow:hidden;background-color:#008cba;border-radius:20px;text-align:center}#process .tab div{background-color:inherit;float:left;border:none;outline:0;cursor:pointer;padding:14px 16px;-webkit-transition:.3s;transition:.3s;font-size:17px}#process .tab div:hover{background-color:#023a4d}#process .tab div.active{background-color:#015b79}#process .tabcontent{display:none;padding:6px 12px;border-top:none}.tabcontentI{display:none;padding:6px 12px;border-top:none}`;
@@ -369,6 +369,9 @@ function dataFromDSCheckBrands(container, element, index, inputTXT) {
     var brandsFromInput = cleanStringFromInput(inputTXT);
     var brandOnSite;
 
+    var checkInThisOrder = document.getElementById("sortInThisOrder");
+
+
     var orange = [];
     var green = ['®', ' Tire', ' Tires'];
 
@@ -389,6 +392,11 @@ function dataFromDSCheckBrands(container, element, index, inputTXT) {
                     if (brandsFromInput[i] == brandOnSite ||
                         includesString(green, brandsFromInput[i], brandOnSite)) {
                         brands[j].getElementsByTagName('input')[0].checked = true;
+                        if (checkInThisOrder.checked) {
+                            brands[j].getElementsByTagName('input')[1].value = i + 1;
+                        }
+
+
                         brands[j].style.backgroundColor = "green";
                         found = true;
                     }
