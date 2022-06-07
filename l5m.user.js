@@ -4,8 +4,8 @@
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *
-// @downloadURL  https://github.com/jhcordova/scripts/raw/main/l5mig.user.js
-// @updateURL    https://github.com/jhcordova/scripts/raw/main/l5mig.user.js
+// @downloadURL  https://github.com/jhcordova/scripts/raw/main/l5m.user.js
+// @updateURL    https://github.com/jhcordova/scripts/raw/main/l5m.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
