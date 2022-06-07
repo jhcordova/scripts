@@ -1,3 +1,14 @@
+// ==UserScript==
+// @name         L5 lazy migration 500000
+// @version      1.0
+// @description  try to take over the world!
+// @author       Julio Cordova
+// @include      *
+// @downloadURL  https://github.com/jhcordova/scripts/raw/main/l5mig.user.js
+// @updateURL    https://github.com/jhcordova/scripts/raw/main/l5mig.user.js
+// @grant        none
+// @run-at       document-end
+// ==/UserScript==
 
 
 var container = document.createElement("div");
