@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         L5 lazy migration 500000
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *
@@ -13,11 +13,11 @@
 
 var container = document.createElement("div");
 container.setAttribute("id", "process");
-container.innerHTML = '<div id="fixedbutton">Copy</div>';
+container.innerHTML = '<div class="fixedbutton" id="btn1" style="margin-right: 200px;">Copy Specs</div><div id="btn2" class="fixedbutton">Copy Overview</div>';
 document.body.prepend(container);
 
 
-var styles = `#fixedbutton{position:fixed;top:0;right:0;z-index:9999;margin-right:50px;padding:10px;background-color:orange;color:#fff;cursor:pointer}#fixedbutton:hover{background-color:#000}`;
+var styles = `.fixedbutton{position:fixed;top:0;right:0;z-index:9999;margin-right:50px;padding:10px;background-color:orange;color:#fff;cursor:pointer}.fixedbutton:hover{background-color:#000}`;
 
 var styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
@@ -25,8 +25,11 @@ styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
 
 
-var button = document.getElementById("fixedbutton");
+var button = document.getElementById("btn1");
 button.addEventListener("click", lazy);
+
+var button2 = document.getElementById("btn2");
+button2.addEventListener("click", lazy2);
 
 function lazy() {
     var list = document.getElementsByClassName("cd-specs-list")[0].getElementsByTagName("li");
@@ -41,6 +44,11 @@ function lazy() {
     copyToClipboard(stringBuilder);
 }
 
+function lazy2() {
+    var text = document.getElementById("cd-list-detail-2").innerText;
+    copyToClipboard(text);
+}
+
 function copyToClipboard(text) {
     var dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
@@ -49,4 +57,3 @@ function copyToClipboard(text) {
     document.execCommand("copy");
     document.body.removeChild(dummy);
 }
-
