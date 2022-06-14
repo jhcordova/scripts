@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         L5 lazy migration 500000
-// @version      1.2
+// @version      1.3
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *
@@ -8,7 +8,9 @@
 // @updateURL    https://github.com/jhcordova/scripts/raw/main/l5m.user.js
 // @grant        none
 // @run-at       document-end
-// @exclude      *://ari-cms.com/*
+// @exclude      *://*ari-cms.*/*
+// @exclude      *://*endeavorsuite.*/*
+// @exclude      *://*.powerbi.*/*
 // ==/UserScript==
 
 
