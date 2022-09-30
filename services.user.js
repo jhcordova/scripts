@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TSN Services
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @updateURL    https://github.com/jhcordova/scripts/raw/main/services.user.js
 // @downloadURL  https://github.com/jhcordova/scripts/raw/main/services.user.js
 // @description  try to take over the world! hueheuheuheuehuh
