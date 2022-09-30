@@ -13,3 +13,8 @@
 
 $('.service-item .btnBox').append('<input type="checkbox">');
 
+var checks = document.getElementsByClassName("btnBox");
+for (let i = 0; i < checks.length; i++) {
+    checks[i].removeAttribute("href");
+
+}
