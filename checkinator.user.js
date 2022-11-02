@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Checkinator 5000000
-// @version      3.9.6
+// @version      3.9.7
 // @description  try to take over the world!
 // @author       Julio Cordova
 // @include      *://*.netdrivenwebs.com/*
@@ -504,7 +504,7 @@ button3.addEventListener("click", function () {
 var button4 = document.getElementById("button4");
 button4.addEventListener("click", function () {
     if (checkURL()[4]) {
-        dataFromDSCheckServices("servicesInputFromDS", "dnn_ctr450_View_ma_categoryPanel", "tr", "span", 1);
+        dataFromDSCheckServices("servicesInputFromDS", "dnn_ctr450_View_manageAssignments_categoryPanel", "tr", "span", 1);
     }
     else if (checkURL()[1]) {
         dataFromDSCheckServices("servicesInputFromDS", "dnn_ctr447_View_SetupForm_cblServiceTypes", "td", "label", 0);
